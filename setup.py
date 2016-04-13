@@ -16,4 +16,7 @@ setup(name=NAME,
       author_email='webadmin@eea.europa.eu',
       url="https://github.com/eea/eee.rabbitmq.client",
       license='GPL',
+      install_requires=[
+          'pika'
+      ],
       )
