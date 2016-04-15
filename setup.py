@@ -15,6 +15,7 @@ setup(name=NAME,
       author='European Environment Agency (EEA)',
       author_email='webadmin@eea.europa.eu',
       url="https://github.com/eea/eea.rabbitmq.client",
+      namespace_packages=['eea'],
       license='GPL',
       install_requires=[
           'pika'
