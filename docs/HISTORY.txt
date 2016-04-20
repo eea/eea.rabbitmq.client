@@ -3,5 +3,9 @@ Changelog
 
 1.0.dev0 - (unreleased)
 ------------------------
-* Innitial release
+* Feature: added documentation
+  [alecghica refs #69689]
+* Bug fix: fixed package structure
+  [alecghica refs #69689]
+* Feature: innitial release
   [szabozo0 refs #69689]
