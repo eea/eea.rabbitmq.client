@@ -35,6 +35,11 @@ setup(name=NAME,
       install_requires=[
           'pika'
       ],
+      extras_require={
+          'test': [
+              'plone.app.testing',
+          ]
+      },
       entry_points="""
       # -*- Entry points: -*-
       """,
