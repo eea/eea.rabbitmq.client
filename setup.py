@@ -10,8 +10,8 @@ VERSION = open(os.path.join(*PATH)).read().strip()
 setup(name=NAME,
       version=VERSION,
       description='Python RabbitMQ client',
-      long_description = open('README.rst').read() + "\n\n" +
-                         open(os.path.join("docs", "HISTORY.txt")).read(),
+      long_description=open('README.rst').read() + "\n\n" +
+                       open(os.path.join("docs", "HISTORY.txt")).read(),
       classifiers=[
           "Framework :: Zope2",
           "Framework :: Zope3",
@@ -42,6 +42,8 @@ setup(name=NAME,
       },
       entry_points="""
       # -*- Entry points: -*-
+      [z3c.autoinclude.plugin]
+      target = plone
       """,
 
       )

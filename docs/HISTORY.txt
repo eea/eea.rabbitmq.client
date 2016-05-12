@@ -3,6 +3,8 @@ Changelog
 
 1.1.dev0 - (unreleased)
 -----------------------
+* Change: turned package into a proper plone package
+  [ichim-david refs #71940]
 
 1.0 - (2016-05-04)
 ------------------

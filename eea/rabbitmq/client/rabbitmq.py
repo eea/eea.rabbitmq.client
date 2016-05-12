@@ -6,7 +6,8 @@ import pika
 
 logger = logging.getLogger("eea.rabbitmq.client")
 
-class RabbitMQConnector:
+
+class RabbitMQConnector(object):
     """ RabbitMQ connector
     """
 
@@ -62,6 +63,8 @@ class RabbitMQConnector:
                 self.__rabbit_port)
 
     def get_channel(self):
+        """ get_channel
+        """
         return self.__rabbit_channel
 
     def get_queue_status(self, queue_name):
@@ -115,11 +118,11 @@ class RabbitMQConnector:
             the queue name.
         """
         self.__rabbit_channel.basic_publish(exchange='',
-            routing_key=queue_name,
-            body=body,
-            properties=pika.BasicProperties(
-                delivery_mode = 2, # make message persistent
-            ))
+                                            routing_key=queue_name,
+                                            body=body,
+                                            properties=pika.BasicProperties(
+                                                delivery_mode=2))
+                                                # make message persistent
         logger.info(
             'SENT \'%s\' in \'%s\'',
             body,
