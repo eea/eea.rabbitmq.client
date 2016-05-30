@@ -33,6 +33,7 @@ setup(name=NAME,
       license='GPL',
       zip_safe=True,
       install_requires=[
+          'setuptools',
           'pika'
       ],
       extras_require={
