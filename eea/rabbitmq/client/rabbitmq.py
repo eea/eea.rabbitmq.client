@@ -5,7 +5,12 @@ import logging
 import pika
 
 logger = logging.getLogger("eea.rabbitmq.client")
-
+logger.setLevel(logging.DEBUG)
+ch = logging.StreamHandler()
+ch.setLevel(logging.DEBUG)
+formatter = logging.Formatter('%(asctime)s - %(name)s/%(filename)s/%(funcName)s - %(levelname)s - %(message)s')
+ch.setFormatter(formatter)
+logger.addHandler(ch)
 
 class RabbitMQConnector(object):
     """ RabbitMQ connector
@@ -29,7 +34,8 @@ class RabbitMQConnector(object):
                 pika.ConnectionParameters(
                     host=self.__rabbit_host,
                     port=self.__rabbit_port,
-                    credentials=self.__rabbit_credentials))
+                    credentials=self.__rabbit_credentials,
+                    heartbeat_interval=0))
             self.__rabbit_channel = self.__rabbit_connection.channel()
         except Exception, err:
             logger.error(
