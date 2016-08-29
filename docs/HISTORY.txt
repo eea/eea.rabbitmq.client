@@ -1,8 +1,8 @@
 Changelog
 =========
 
-1.2.dev0 - (unreleased)
------------------------
+1.2 - (2016-08-29)
+------------------
 * Change: disabled hearbeat interval to avoid
   disconnections.
   [chiridra refs #72772]
