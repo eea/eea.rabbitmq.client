@@ -4,7 +4,7 @@ Changelog
 1.4.dev0 - (unreleased)
 -----------------------
 * Change: updated package information
-[eduard-fironda]
+  [eduard-fironda]
 
 1.3 - (2016-09-05)
 ------------------
