@@ -1,6 +1,8 @@
 =========================
 RabbitMQ Python connector
 =========================
+.. image:: http://ci.eionet.europa.eu/job/eea/job/eea.rabbitmq.client/job/master/badge/icon
+  :target: http://ci.eionet.europa.eu/job/eea/job/eea.rabbitmq.client/job/master/display/redirect
 
 Basic RabbitMQ Python connector.
 
@@ -22,7 +24,7 @@ API
 Usage example::
 
     from eea.rabbitmq.client import RabbitMQConnector
-    
+
     rabbit_config = {
         'rabbit_host': "10.0.0.1",
         'rabbit_port': "8080",
@@ -30,7 +32,7 @@ Usage example::
         'rabbit_password': "admin"
     }
     queue_name = "QUEUE_NAME"
-    
+
     rabbit = RabbitMQConnector(**rabbit_config)
     rabbit.open_connection()
     rabbit.declare_queue(queue_name)
