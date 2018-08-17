@@ -6,7 +6,8 @@
     xmlns:cmf="http://namespaces.zope.org/cmf"
     i18n_domain="plone">
 
+    <include package=".upgrades" />
+
     <include file="profiles.zcml" />
 
-    <utility factory=".setuphandlers.HiddenProducts" name="eea.rabbitmq.client" />
 </configure>
