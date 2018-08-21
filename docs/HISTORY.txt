@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.6 - (2018-08-17)
+1.6 - (2018-08-21)
 -----------------------
 * Feature: add configuration and utilities for RabbitMQ client
   [GhitaB refs #91506]
