@@ -2,6 +2,7 @@
 """
 
 from contextlib import contextmanager
+from plone import api
 from plone.app.registry.browser.controlpanel import ControlPanelFormWrapper
 from plone.app.registry.browser.controlpanel import RegistryEditForm
 from plone.registry.interfaces import IRegistry
@@ -176,6 +177,16 @@ RabbitMQClientControlPanelView = layout.wrap_form(
 RabbitMQClientControlPanelView.label = u"RabbitMQ Client settings"
 
 
+def get_rabbitmq_client_settings():
+    """ Return the settings as set in site/@@rabbitmq-client-controlpanel
+
+        Usage: s.server, s.port, s.username, s.password
+    """
+    registry = getUtility(IRegistry, context=api.portal.get())
+    s = registry.forInterface(IRabbitMQClientSettings)
+    return s
+
+
 @contextmanager
 def get_rabbitmq_conn(queue, context=None):
     """ Context manager to connect to RabbitMQ
@@ -184,8 +195,7 @@ def get_rabbitmq_conn(queue, context=None):
     if context is None:
         context = getSite()
 
-    registry = getUtility(IRegistry, context=context)
-    s = registry.forInterface(IRabbitMQClientSettings)
+    s = get_rabbitmq_client_settings()
 
     rb = RabbitMQConnector(s.server, s.port, s.username, s.password)
     rb.open_connection()
