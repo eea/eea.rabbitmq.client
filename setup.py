@@ -11,7 +11,7 @@ setup(name=NAME,
       version=VERSION,
       description='Python RabbitMQ client',
       long_description=open('README.rst').read() + "\n\n" +
-                       open(os.path.join("docs", "HISTORY.txt")).read(),
+      open(os.path.join("docs", "HISTORY.txt")).read(),
       # https://pypi.python.org/pypi?%3Aaction=list_classifiers
       classifiers=[
           "Framework :: Zope2",
@@ -36,6 +36,7 @@ setup(name=NAME,
       license='GPL',
       zip_safe=True,
       install_requires=[
+          'plone.api',
           'setuptools',
           'pika'
       ],
