@@ -1,8 +1,12 @@
 =========================
 RabbitMQ Python connector
 =========================
-.. image:: http://ci.eionet.europa.eu/job/eea/job/eea.rabbitmq.client/job/master/badge/icon
-  :target: http://ci.eionet.europa.eu/job/eea/job/eea.rabbitmq.client/job/master/display/redirect
+.. image:: https://ci.eionet.europa.eu/buildStatus/icon?job=eea/eea.rabbitmq.client/develop
+  :target: https://ci.eionet.europa.eu/job/eea/job/eea.rabbitmq.client/job/develop/display/redirect
+  :alt: develop
+.. image:: https://ci.eionet.europa.eu/buildStatus/icon?job=eea/eea.rabbitmq.client/master
+  :target: https://ci.eionet.europa.eu/job/eea/job/eea.rabbitmq.client/job/master/display/redirect
+  :alt: master
 
 Basic RabbitMQ Python connector.
 

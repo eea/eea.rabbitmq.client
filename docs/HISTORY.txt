@@ -1,8 +1,15 @@
 Changelog
 =========
 
-1.5.dev0 - (unreleased)
+1.6 - (2018-08-21)
 -----------------------
+* Feature: add configuration and utilities for RabbitMQ client
+  [GhitaB refs #91506]
+* Change: updated URLs pointing to eea.europa.eu with https://
+  [alecghica refs #95849]
+
+1.5 - (2017-12-12)
+------------------
 * Change: Replace eeacms/zptlint with eeacms/plone-test:4 zptlint
   [avoinea refs #90415]
 
