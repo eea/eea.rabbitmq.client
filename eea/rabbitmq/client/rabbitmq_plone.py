@@ -19,20 +19,20 @@ try:
 
     is_plone = True
 except ImportError:
-    contextmanager = None
-    RabbitMQConnector = None
+    contextmanager = object
+    RabbitMQConnector = object
     api = None
-    ControlPanelFormWrapper = None
-    RegistryEditForm = None
-    IRegistry = None
-    layout = None
-    form = None
-    getUtility = None
-    getSite = None
-    Interface = None
-    TextLine = Int = None
-    logging = None
-    transaction = None
+    ControlPanelFormWrapper = object
+    RegistryEditForm = object
+    IRegistry = object
+    layout = object
+    form = object
+    getUtility = object
+    getSite = object
+    Interface = object
+    TextLine = Int = object
+    logging = object
+    transaction = object
     is_plone = False
 
 if is_plone:
