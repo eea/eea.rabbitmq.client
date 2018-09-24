@@ -40,9 +40,6 @@ setup(name=NAME,
           'pika'
       ],
       extras_require={
-          'plone': [
-            'plone.api',
-          ],
           'test': [
               'plone.app.testing',
           ]

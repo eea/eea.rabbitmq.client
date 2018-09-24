@@ -3,7 +3,8 @@ Changelog
 
 1.7-dev0 - (unreleased)
 ---------------------
-* Change: plone utilities for RabbitMQ client as extra feature.
+* Change: Remove plone utilities for RabbitMQ client.
+  (Moved in https://github.com/eea/eea.rabbitmq.plone)
   [GhitaB refs #91506]
 
 1.6 - (2018-08-21)
