@@ -16,19 +16,36 @@ try:
     from zope.schema import TextLine, Int
     import logging
     import transaction
-except ImportError:
-    pass
 
-logger = logging.getLogger("eea.rabbitmq.client")
-logger.setLevel(logging.DEBUG)
-ch = logging.StreamHandler()
-ch.setLevel(logging.DEBUG)
-formatter = logging.Formatter(
-    "%(asctime)s - "
-    "%(name)s/%(filename)s/%(funcName)s - "
-    "%(levelname)s - %(message)s")
-ch.setFormatter(formatter)
-logger.addHandler(ch)
+    is_plone = True
+except ImportError:
+    contextmanager = None
+    RabbitMQConnector = None
+    api = None
+    ControlPanelFormWrapper = None
+    RegistryEditForm = None
+    IRegistry = None
+    layout = None
+    form = None
+    getUtility = None
+    getSite = None
+    Interface = None
+    TextLine = Int = None
+    logging = None
+    transaction = None
+    is_plone = False
+
+if is_plone:
+    logger = logging.getLogger("eea.rabbitmq.client")
+    logger.setLevel(logging.DEBUG)
+    ch = logging.StreamHandler()
+    ch.setLevel(logging.DEBUG)
+    formatter = logging.Formatter(
+        "%(asctime)s - "
+        "%(name)s/%(filename)s/%(funcName)s - "
+        "%(levelname)s - %(message)s")
+    ch.setFormatter(formatter)
+    logger.addHandler(ch)
 
 
 class IRabbitMQClientSettings(Interface):
