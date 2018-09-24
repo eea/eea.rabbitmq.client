@@ -1,20 +1,23 @@
 """ Configuration and utilities for RabbitMQ client
 """
 
-from contextlib import contextmanager
-from eea.rabbitmq.client.rabbitmq import RabbitMQConnector
-from plone import api
-from plone.app.registry.browser.controlpanel import ControlPanelFormWrapper
-from plone.app.registry.browser.controlpanel import RegistryEditForm
-from plone.registry.interfaces import IRegistry
-from plone.z3cform import layout
-from z3c.form import form
-from zope.component import getUtility
-from zope.component.hooks import getSite
-from zope.interface import Interface
-from zope.schema import TextLine, Int
-import logging
-import transaction
+try:
+    from contextlib import contextmanager
+    from eea.rabbitmq.client.rabbitmq import RabbitMQConnector
+    from plone import api
+    from plone.app.registry.browser.controlpanel import ControlPanelFormWrapper
+    from plone.app.registry.browser.controlpanel import RegistryEditForm
+    from plone.registry.interfaces import IRegistry
+    from plone.z3cform import layout
+    from z3c.form import form
+    from zope.component import getUtility
+    from zope.component.hooks import getSite
+    from zope.interface import Interface
+    from zope.schema import TextLine, Int
+    import logging
+    import transaction
+except ImportError:
+    pass
 
 logger = logging.getLogger("eea.rabbitmq.client")
 logger.setLevel(logging.DEBUG)
