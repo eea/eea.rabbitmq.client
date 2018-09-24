@@ -14,7 +14,7 @@
       name="rabbitmq-client-controlpanel"
       for="Products.CMFPlone.interfaces.IPloneSiteRoot"
       permission="cmf.ManagePortal"
-      class=".rabbitmq.RabbitMQClientControlPanelView"
+      class=".rabbitmq_plone.RabbitMQClientControlPanelView"
       />
 
 </configure>
