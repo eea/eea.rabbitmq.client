@@ -36,11 +36,13 @@ setup(name=NAME,
       license='GPL',
       zip_safe=True,
       install_requires=[
-          'plone.api',
           'setuptools',
           'pika'
       ],
       extras_require={
+          'plone': [
+            'plone.api',
+          ],
           'test': [
               'plone.app.testing',
           ]
