@@ -17,35 +17,21 @@ try:
     import logging
     import transaction
 
-    is_plone = True
 except ImportError:
-    contextmanager = object
-    RabbitMQConnector = object
-    api = None
-    ControlPanelFormWrapper = object
-    RegistryEditForm = object
-    IRegistry = object
-    layout = object
-    form = object
-    getUtility = object
-    getSite = object
-    Interface = object
-    TextLine = Int = object
-    logging = object
-    transaction = object
-    is_plone = False
+    from sys import exit
+    exit(0)  # ignore this file if not plone setup
 
-if is_plone:
-    logger = logging.getLogger("eea.rabbitmq.client")
-    logger.setLevel(logging.DEBUG)
-    ch = logging.StreamHandler()
-    ch.setLevel(logging.DEBUG)
-    formatter = logging.Formatter(
-        "%(asctime)s - "
-        "%(name)s/%(filename)s/%(funcName)s - "
-        "%(levelname)s - %(message)s")
-    ch.setFormatter(formatter)
-    logger.addHandler(ch)
+
+logger = logging.getLogger("eea.rabbitmq.client")
+logger.setLevel(logging.DEBUG)
+ch = logging.StreamHandler()
+ch.setLevel(logging.DEBUG)
+formatter = logging.Formatter(
+    "%(asctime)s - "
+    "%(name)s/%(filename)s/%(funcName)s - "
+    "%(levelname)s - %(message)s")
+ch.setFormatter(formatter)
+logger.addHandler(ch)
 
 
 class IRabbitMQClientSettings(Interface):
