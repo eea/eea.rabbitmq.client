@@ -1,6 +1,9 @@
 Changelog
 =========
 
+1.8-dev0 - (unreleased)
+---------------------
+
 1.7 - (2018-09-24)
 ---------------------
 * Change: Remove plone utilities for RabbitMQ client.
