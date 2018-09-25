@@ -1,6 +1,12 @@
 Changelog
 =========
 
+1.7 - (2018-09-24)
+---------------------
+* Change: Remove plone utilities for RabbitMQ client.
+  (Moved in https://github.com/eea/eea.rabbitmq.plone)
+  [GhitaB refs #91506]
+
 1.6 - (2018-08-21)
 -----------------------
 * Feature: add configuration and utilities for RabbitMQ client
@@ -42,4 +48,3 @@ Changelog
   [alecghica refs #69689]
 * Feature: innitial release
   [szabozo0 refs #69689]
-
