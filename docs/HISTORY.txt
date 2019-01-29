@@ -3,6 +3,8 @@ Changelog
 
 1.8 - (2019-01-28)
 ---------------------
+* Jenkins: Add sonarqube step
+  [avoinea refs #101552]
 
 1.7 - (2018-09-24)
 ---------------------
