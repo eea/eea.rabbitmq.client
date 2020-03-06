@@ -41,7 +41,7 @@ class RabbitMQConnector(object):
                     credentials=self.__rabbit_credentials,
                     heartbeat_interval=0))
             self.__rabbit_channel = self.__rabbit_connection.channel()
-        except Exception, err:
+        except Exception as err:
             logger.error(
                 'CONNECTING to RabbitMQ at %s:%s FAILED with error: %s',
                 self.__rabbit_host,
@@ -60,7 +60,7 @@ class RabbitMQConnector(object):
             self.__rabbit_connection.close()
             self.__rabbit_connection = None
             self.__rabbit_channel = None
-        except Exception, err:
+        except Exception as err:
             logger.error(
                 'DISCONNECTING from RabbitMQ at %s:%s FAILED with error: %s',
                 self.__rabbit_host,
