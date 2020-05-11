@@ -2,7 +2,11 @@
 """
 
 import logging
+import sys
 import pika
+
+py3 = sys.version_info.major > 2
+text_type = str if py3 else unicode
 
 logger = logging.getLogger("eea.rabbitmq.client")
 logger.setLevel(logging.DEBUG)
@@ -127,14 +131,16 @@ class RabbitMQConnector(object):
             We use the default exchange and route through
             the queue name.
         """
-        self.__rabbit_channel.basic_publish(exchange='',
-                                            routing_key=queue_name,
-                                            body=body,
-                                            properties=pika.BasicProperties(
-                                                delivery_mode=2))
-        # make message persistent
+        properties = {"delivery_mode": 2} # make message persistent
 
-        logger.info(
-            'SENT \'%s\' in \'%s\'',
-            body,
-            queue_name)
+        if isinstance(body, text_type):
+            body = body.encode("utf-8")
+            properties["content_encoding"] = "utf-8"
+
+        self.__rabbit_channel.basic_publish(
+            exchange='',
+            routing_key=queue_name,
+            body=body,
+            properties=pika.BasicProperties(**properties),
+        )
+        logger.info('SENT %r in %r', body, queue_name)

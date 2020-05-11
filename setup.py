@@ -23,6 +23,7 @@ setup(name=NAME,
           "Programming Language :: Zope",
           "Programming Language :: Python",
           "Programming Language :: Python :: 2.7",
+          "Programming Language :: Python :: 3",
           "Topic :: Software Development :: Libraries :: Python Modules",
           "License :: OSI Approved :: GNU General Public License (GPL)",
       ],
@@ -37,7 +38,7 @@ setup(name=NAME,
       zip_safe=True,
       install_requires=[
           'setuptools',
-          'pika'
+          'pika==0.13.1'
       ],
       extras_require={
           'test': [
