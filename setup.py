@@ -38,7 +38,7 @@ setup(name=NAME,
       zip_safe=True,
       install_requires=[
           'setuptools',
-          'pika==0.13.1'
+          'pika<1.0'
       ],
       extras_require={
           'test': [
