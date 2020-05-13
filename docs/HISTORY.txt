@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.9-dev0 - (unreleased)
+1.9 - (2020-05-13)
 --------------------------
 * Feature: added Python3 support.
   [mgax refs #116195]
