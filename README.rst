@@ -42,3 +42,12 @@ Usage example::
     rabbit.declare_queue(queue_name)
     rabbit.send_message(queue_name, "body text")
     rabbit.close_connection()
+
+
+Strings vs. bytes
+-----------------
+
+RabbitMQ messages are bytes, though they may optionally have an encoding flag. When consuming messages, in Python 3, they are received as bytes, and should be decoded::
+
+    method, properties, body = rabbit.get_message(queue_name)
+    message = body.decode(properties.content_encoding or 'ascii')
