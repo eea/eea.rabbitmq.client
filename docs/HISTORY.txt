@@ -2,17 +2,17 @@ Changelog
 =========
 
 1.9-dev0 - (unreleased)
----------------------
+--------------------------
 * Feature: added Python3 support.
   [mgax refs #116195]
 
 1.8 - (2019-01-28)
----------------------
+--------------------------
 * Jenkins: Add sonarqube step
   [avoinea refs #101552]
 
 1.7 - (2018-09-24)
----------------------
+--------------------------
 * Change: Remove plone utilities for RabbitMQ client.
   (Moved in https://github.com/eea/eea.rabbitmq.plone)
   [GhitaB refs #91506]
